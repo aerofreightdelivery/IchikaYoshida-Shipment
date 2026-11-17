@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AeroFreight Shipment Tracking</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;padding:22px;font-family:Arial,sans-serif;background:linear-gradient(135deg,#edf4ff,#f7f8fc);color:#172033}
+.wrap{max-width:780px;margin:auto}
+.header{background:linear-gradient(135deg,#102b50,#1769aa);color:#fff;border-radius:22px;padding:26px;box-shadow:0 12px 30px #102b5026}
+.header h1{margin:0 0 12px;font-size:clamp(24px,5vw,34px)}
+.ref{font-size:14px;opacity:.95}
+.card{background:#fff;border-radius:18px;padding:22px;margin:18px 0;box-shadow:0 8px 28px #17203312}
+.notice{border-left:5px solid #d69e2e;background:#fffbeb}
+.current{border:2px solid #16a34a;background:linear-gradient(135deg,#f0fdf4,#dcfce7)}
+.status{display:inline-block;padding:9px 13px;border-radius:999px;background:#dcfce7;color:#166534;font-weight:800;font-size:13px}
+.current h2{margin:14px 0 6px;color:#14532d}
+.current p{margin:0;color:#166534;line-height:1.5}
+.route li.now:before{background:#16a34a;color:#fff}
+.route li.now{border-left-color:#16a34a}
+.notice p{margin:8px 0 0;color:#725b24;line-height:1.55}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.item{padding:15px;background:#f5f8fc;border-radius:12px;overflow-wrap:anywhere}
+.item small{display:block;color:#64748b;margin-bottom:7px}
+.address{line-height:1.65;color:#334155}
+.route{list-style:none;padding:0;margin:0;counter-reset:stage}
+.route li{position:relative;margin:0 0 0 10px;padding:0 0 22px 30px;border-left:3px solid #d5dfec}
+.route li:last-child{border-left-color:transparent;padding-bottom:0}
+.route li:before{counter-increment:stage;content:counter(stage);position:absolute;left:-15px;top:0;width:27px;height:27px;border-radius:50%;background:#e7effa;color:#174a7e;display:grid;place-items:center;font-weight:700;font-size:13px}
+.route strong{display:block;margin-bottom:5px}
+.route p{margin:0;color:#64748b;line-height:1.45}
+.transport{display:inline-block;margin-top:6px;padding:4px 9px;border-radius:20px;background:#eef4fb;color:#315477;font-size:12px}
+.muted{color:#64748b;line-height:1.55}
+.footer{font-size:13px;color:#64748b;text-align:center;padding:12px}
+a{color:#175da5}
+@media(max-width:560px){body{padding:14px}.grid{grid-template-columns:1fr}.card{padding:18px}.header{padding:22px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="header">
+    <h1>AeroFreight Shipment Tracking</h1>
+    <div class="ref">Tracking reference: <strong>MED-K3JMAV7P1Z</strong></div>
+  </header>
+
+  <section class="card current">
+    <span class="status">● CURRENT STATUS: AT TERMINAL — AWAITING FREIGHT CLEARANCE</span>
+    <h2>Current Location: Milano Malpensa Cargo City, Italy</h2>
+    <p>Mr. Greg Deka's package has been reviewed and is currently at the AeroFreight terminal in Milano Malpensa, awaiting freight clearance.</p>
+  </section>
+
+  <section class="card notice">
+    <strong>SHIPMENT STATUS — VERIFIED AND RECEIVED AT TERMINAL</strong>
+    <p>The shipment has successfully undergone initial verification and has been confirmed as physically received at our cargo terminal, Milan Malpensa Cargo City, Italy.</p>
+    <p>The consignment is currently recorded as being in terminal custody, awaiting completion of the applicable freight clearance procedures and confirmation of onward transportation arrangements.</p>
+    <p>The proposed delivery route and estimated transit timeframe remain subject to final carrier coordination and operational scheduling.</p>
+    <p>Further tracking updates will be provided as the shipment progresses through the remaining handling, clearance, and dispatch procedures.</p>
+  </section>
+
+  <section class="card">
+    <h2>Shipment Details</h2>
+    <div class="grid">
+      <div class="item"><small>Origin</small><strong>Milano Malpensa Cargo City, Italy</strong></div>
+      <div class="item"><small>Destination</small><strong>South Bend, Indiana, USA</strong></div>
+      <div class="item"><small>Planned route</small><strong>Italy → Chicago, Illinois → South Bend, Indiana</strong></div>
+      <div class="item"><small>Estimated delivery timeframe</small><strong>Approximately 4–7 business days</strong></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Shipment Route</h2><p class="muted">The first stage is the current status. The remaining stages show the planned route and are not marked as completed.</p>
+    <ol class="route">
+      <li class="now"><strong>Milano Malpensa Cargo City, Italy — CURRENT STAGE</strong><p>Mr. Greg Deka's package has been reviewed and is currently held at the terminal, awaiting freight clearance.</p><span class="transport">Current terminal status</span></li>
+      <li><strong>Milan Malpensa Airport (MXP)</strong><p>Air freight departure</p><span class="transport">Air freight</span></li>
+      <li><strong>Chicago O'Hare Airport (ORD)</strong><p>International arrival</p><span class="transport">Air freight arrival</span></li>
+      <li><strong>Chicago Cargo Terminal</strong><p>Customs clearance</p><span class="transport">Cargo terminal / customs</span></li>
+      <li><strong>Chicago, Illinois</strong><p>Onward transport toward the destination</p><span class="transport">Cargo truck</span></li>
+      <li><strong>South Bend, Indiana</strong><p>Final delivery destination</p><span class="transport">Final delivery</span></li>
+    </ol>
+  </section>
+
+  <section class="card">
+    <h2>Origin Address</h2>
+    <p class="address"><strong>Milano Malpensa Cargo City</strong><br>
+    Aeroporto di Milano Malpensa<br>
+    Cargo City, 21010 Malpensa (VA)<br>
+    Lombardy, Italy</p>
+  </section>
+
+  <section class="card">
+    <h2>Destination Address</h2>
+    <p class="address"><strong>Delivery recipient</strong><br>
+    17650 Generations Drive<br>
+    Apartment 202<br>
+    South Bend, Indiana 46635<br>
+    United States<br>
+    <strong>Receiver phone:</strong> <a href="tel:+15742224837">+1 574-222-4837</a></p>
+  </section>
+
+  <section class="card">
+    <h2>Estimated Delivery Timeframe</h2>
+    <p class="muted">A preliminary planning estimate is approximately <strong>4–7 business days</strong>. This is not a guaranteed delivery date. The actual timeframe may change depending on carrier handling, flight schedules, customs processing, and final-mile delivery arrangements.</p>
+  </section>
+
+  <div class="footer">
+    AeroFreight Delivery &amp; Security Company · <a href="index.html">Track another shipment</a>
+  </div>
+</div>
+</body>
+</html>
